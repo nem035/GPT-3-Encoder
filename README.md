@@ -7,7 +7,7 @@ GPT-2 and GPT-3 use byte pair encoding to turn text into a series of integers to
 ## Install with npm
 
 ```
-npm install gpt-3-encoder
+npm install @nem035/gpt-3-encoder
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install gpt-3-encoder
 Compatible with Node >= 12
 
 ```js
-const {encode, decode} = require('gpt-3-encoder')
+const {encode, decode} = require('@nem035/gpt-3-encoder')
 
 const str = 'This is an example sentence to try encoding out on!'
 const encoded = encode(str)

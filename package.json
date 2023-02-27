@@ -1,13 +1,13 @@
 {
-  "name": "gpt-3-encoder",
-  "version": "1.1.4",
+  "name": "@nem035/gpt-3-encoder",
+  "version": "1.1.6",
   "description": "Javascript BPE Encoder Decoder for GPT-2 / GPT-3",
   "main": "index.js",
   "types": "./index.d.ts",
   "files": [
     "Encoder.js",
     "encoder.json",
-    "vocab.bpe",
+    "vocab.js",
     "index.d.ts"
   ],
   "scripts": {
@@ -15,14 +15,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AIDungeon/GPT-3-Encoder.git"
+    "url": "git+https://github.com/nem035/GPT-3-Encoder.git"
   },
-  "author": "",
+  "author": "nemanjacoder@gmail.com",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AIDungeon/GPT-3-Encoder/issues"
+    "url": "https://github.com/nem035/GPT-3-Encoder/issues"
   },
-  "homepage": "https://github.com/AIDungeon/GPT-3-Encoder#readme",
+  "homepage": "https://github.com/nem035/GPT-3-Encoder#readme",
   "devDependencies": {
     "jest": "^26.4.2"
   }

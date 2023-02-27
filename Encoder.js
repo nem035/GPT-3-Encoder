@@ -1,9 +1,6 @@
 // This file includes code which was modified from https://github.com/openai/gpt-2
-const fs = require('fs')
-const path = require('path');
-
-const encoder = JSON.parse(fs.readFileSync(path.join(__dirname, './encoder.json')));
-const bpe_file = fs.readFileSync(path.join(__dirname, './vocab.bpe'), 'utf-8');
+const encoder = require('./encoder.json');
+const bpe_file = require('./vocab');
 
 const range = (x, y) => {
   const res = Array.from(Array(y).keys()).slice(x)
@@ -74,7 +71,7 @@ const lines = bpe_file.split('\n')
 
 // bpe_merges = [tuple(merge_str.split()) for merge_str in bpe_data.split("\n")[1:-1]]
 const bpe_merges = lines.slice(1, lines.length - 1).map(x => {
-  return x.split(/(\s+)/).filter(function(e) { return e.trim().length > 0 })
+  return x.split(/(\s+)/).filter(function (e) { return e.trim().length > 0 })
 })
 
 const byte_encoder = bytes_to_unicode()
@@ -87,7 +84,7 @@ const cache = new Map;
 function bpe(token) {
   if (cache.has(token)) {
     return cache.get(token)
-  }``
+  } ``
 
   let word = token.split('')
 
@@ -159,7 +156,7 @@ function encode(text) {
     token = encodeStr(token).map(x => {
       return byte_encoder[x]
     }).join('')
-    
+
     const new_tokens = bpe(token).split(' ').map(x => encoder[x])
     bpe_tokens = bpe_tokens.concat(new_tokens)
   }
